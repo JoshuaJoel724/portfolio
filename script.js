@@ -165,7 +165,7 @@ function initializeProjects() {
                     <div class="tech-tags">
                         <span>Fusion 360</span>
                         <span>Ender 3 Neo</span>
-                        <span>Arduino</span>
+                        <!-- <span>Arduino</span> -->
                         <span>ANSYS</span>
                         <span>Thermal Engineering</span>
                     </div>
@@ -256,7 +256,7 @@ function initializeProjects() {
                     <h3>Tools & Technologies</h3>
                     <div class="tech-tags">
                         <span>Fusion 360</span>
-                        <span>Arduino UNO</span>
+                        <!-- <span>Arduino UNO</span> -->
                         <span>GRBL Firmware</span>
                         <span>3D Printing</span>
                         <span>Stepper Motors</span>
