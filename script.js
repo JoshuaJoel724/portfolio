@@ -682,6 +682,10 @@ function initializeProjects() {
                 <img src="assets/designs/juice mixer/assembled_view.png" alt="Juice Mixer Assembled">
                 <img src="assets/designs/juice mixer/cover.png" alt="Juice Mixer Cover">
                 <img src="assets/designs/juice mixer/motor_holder_cover.png" alt="Motor Holder Cover">
+                <video autoplay muted loop>
+                            <source src="assets/designs/juice mixer/juice_mixer_3d_printed.mp4" type="video/mp4">
+                            Your browser does not support the video tag.
+                        </video>
             </div>
         </div>
       `,

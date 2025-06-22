@@ -29,8 +29,8 @@
     --container-padding: 0 20px;
 
     /* Transitions */
-    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-    --transition-bounce: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    --transition-smooth: all 0.15s cubic-bezier(0.4, 0, 0.2, 0.5);
+    --transition-bounce: all 0.1s cubic-bezier(0.68, -0.55, 0.265, 1.55);
 }
 
 html {
@@ -518,7 +518,7 @@ section {
     background: linear-gradient(45deg, var(--primary-color), var(--secondary-color));
     border-radius: 4px;
     width: 0;
-    transition: width 1.5s ease-in-out;
+    transition: width 0.8s ease-in-out;
 }
 
 /* Projects Section */
@@ -1088,7 +1088,7 @@ section {
         background-color: var(--card-bg);
         width: 100%;
         text-align: center;
-        transition: 0.3s;
+        transition: 0.15s;
         padding: 2rem 0;
         border-top: 1px solid var(--border-color);
     }
