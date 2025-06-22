@@ -164,7 +164,7 @@ body {
         linear-gradient(rgba(0, 255, 255, 0.1) 1px, transparent 1px),
         linear-gradient(90deg, rgba(0, 255, 255, 0.1) 1px, transparent 1px);
     background-size: 50px 50px;
-    animation: gridMove 20s linear infinite;
+    animation: gridMove 12s linear infinite;
 }
 
 @keyframes gridMove {
@@ -185,7 +185,7 @@ body {
     height: 60px;
     border: 2px solid rgba(0, 255, 255, 0.3);
     border-radius: 50%;
-    animation: float 6s ease-in-out infinite;
+    animation: float 4s ease-in-out infinite;
 }
 
 .floating-gear:nth-child(1) {
@@ -201,7 +201,7 @@ body {
 }
 
 .floating-gear:nth-child(3) {
-    bottom: 20%;
+    bottom: 30%;
     left: 20%;
     animation-delay: 4s;
 }
@@ -227,29 +227,27 @@ body {
     font-family: var(--font-primary);
     font-size: 3.5rem;
     font-weight: 900;
-    background: linear-gradient(45deg, var(--primary-color), var(--secondary-color));
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
+    color: var(--primary-color);
+    text-shadow: 0 0 20px rgba(0, 255, 255, 0.5);
     margin-bottom: 0.5rem;
-    animation: glow 2s ease-in-out infinite alternate;
+    animation: glow 1.5s ease-in-out infinite alternate;
 }
 
 @keyframes glow {
-    from { filter: drop-shadow(0 0 5px rgba(0, 255, 255, 0.5)); }
-    to { filter: drop-shadow(0 0 20px rgba(0, 255, 255, 0.8)); }
+    0% { text-shadow: 0 0 20px rgba(0, 255, 255, 0.5); }
+    100% { text-shadow: 0 0 30px rgba(0, 255, 255, 0.8), 0 0 40px rgba(0, 255, 255, 0.3); }
 }
 
 .title-subtitle {
     display: block;
-    font-size: 1.5rem;
-    font-weight: 600;
+    font-size: 1.2rem;
     color: var(--text-secondary);
-    letter-spacing: 2px;
+    font-weight: 400;
+    margin-bottom: 1rem;
 }
 
 .hero-description {
-    font-size: 1.2rem;
+    font-size: 1.1rem;
     color: var(--text-secondary);
     margin-bottom: 2rem;
     max-width: 600px;
@@ -261,34 +259,34 @@ body {
     display: flex;
     gap: 1rem;
     justify-content: center;
-    margin-bottom: 3rem;
+    margin-bottom: 2rem;
     flex-wrap: wrap;
 }
 
 .btn {
-    display: inline-flex;
-    align-items: center;
-    gap: 0.5rem;
-    padding: 12px 30px;
+    padding: 12px 24px;
     border: none;
-    border-radius: 50px;
+    border-radius: 8px;
     font-family: var(--font-secondary);
     font-weight: 600;
     text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    transition: var(--transition-smooth);
     cursor: pointer;
-    transition: var(--transition-bounce);
-    position: relative;
-    overflow: hidden;
+    font-size: 1rem;
 }
 
 .btn-primary {
-    background: linear-gradient(45deg, var(--primary-color), var(--secondary-color));
+    background: var(--primary-color);
     color: var(--dark-bg);
 }
 
 .btn-primary:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 10px 25px rgba(0, 255, 255, 0.3);
+    background: var(--hover-color);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(0, 255, 255, 0.3);
 }
 
 .btn-secondary {
@@ -300,12 +298,12 @@ body {
 .btn-secondary:hover {
     background: var(--primary-color);
     color: var(--dark-bg);
-    transform: translateY(-3px);
+    transform: translateY(-2px);
 }
 
 .btn-outline {
     background: transparent;
-    color: var(--text-primary);
+    color: var(--text-secondary);
     border: 2px solid var(--border-color);
 }
 
@@ -316,29 +314,30 @@ body {
 
 .social-links {
     display: flex;
-    justify-content: center;
     gap: 1rem;
+    justify-content: center;
+    margin-top: 1rem;
 }
 
 .social-link {
+    width: 45px;
+    height: 45px;
+    border: 2px solid var(--border-color);
+    border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 50px;
-    height: 50px;
-    background: var(--card-bg);
-    border: 1px solid var(--border-color);
-    border-radius: 50%;
     color: var(--text-secondary);
     text-decoration: none;
     transition: var(--transition-smooth);
+    font-size: 1.2rem;
 }
 
 .social-link:hover {
-    background: var(--primary-color);
-    color: var(--dark-bg);
+    border-color: var(--primary-color);
+    color: var(--primary-color);
     transform: translateY(-3px);
-    box-shadow: 0 5px 15px rgba(0, 255, 255, 0.3);
+    box-shadow: 0 8px 25px rgba(0, 255, 255, 0.2);
 }
 
 .scroll-indicator {
@@ -346,7 +345,7 @@ body {
     bottom: 30px;
     left: 50%;
     transform: translateX(-50%);
-    animation: bounce 2s infinite;
+    z-index: 2;
 }
 
 .scroll-arrow {
@@ -745,39 +744,80 @@ section {
 /* Certifications Section */
 .certifications-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     gap: 2rem;
+    margin-top: 3rem;
 }
 
 .cert-card {
     background: var(--card-bg);
     border: 1px solid var(--border-color);
-    border-radius: 15px;
-    padding: 2rem;
+    border-radius: 12px;
+    padding: 1.5rem;
     text-align: center;
     transition: var(--transition-smooth);
+    cursor: pointer;
 }
 
 .cert-card:hover {
-    border-color: var(--primary-color);
     transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(0, 255, 255, 0.1);
+    border-color: var(--primary-color);
 }
 
-.cert-icon {
-    font-size: 3rem;
-    color: var(--primary-color);
+.cert-image {
+    position: relative;
+    width: 100%;
+    height: 200px;
+    border-radius: 8px;
+    overflow: hidden;
     margin-bottom: 1rem;
 }
 
+.cert-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: var(--transition-smooth);
+}
+
+.cert-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: var(--transition-smooth);
+}
+
+.cert-overlay i {
+    color: var(--primary-color);
+    font-size: 2rem;
+}
+
+.cert-card:hover .cert-overlay {
+    opacity: 1;
+}
+
+.cert-card:hover .cert-image img {
+    transform: scale(1.05);
+}
+
 .cert-card h3 {
-    font-family: var(--font-primary);
+    color: var(--text-primary);
     font-size: 1.2rem;
     margin-bottom: 0.5rem;
-    color: var(--text-primary);
+    font-weight: 600;
 }
 
 .cert-card p {
     color: var(--text-secondary);
+    font-size: 0.9rem;
 }
 
 /* Contact Section */

@@ -61,18 +61,8 @@ joshua/
 
 2. **Open the website**
    - Double-click `index.html` to open in your browser
-   - Or use a local server for development:
-     ```bash
-     # Using Python 3
-     python -m http.server 8000
-     
-     # Using Node.js (if you have http-server installed)
-     npx http-server
-     
-     # Using PHP
-     php -S localhost:8000
-     ```
-
+   - Or use a local server for development using live server extension in vscode/cursor
+    
 3. **View the website**
    - Navigate to `http://localhost:8000` in your browser
 

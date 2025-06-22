@@ -6,6 +6,7 @@ const navLinks = document.querySelectorAll(".nav-link");
 const contactForm = document.getElementById("contact-form");
 const projectCards = document.querySelectorAll(".project-card");
 const designCards = document.querySelectorAll(".design-card");
+const certCards = document.querySelectorAll(".cert-card");
 const modal = document.getElementById("project-modal");
 const modalBody = document.getElementById("modal-body");
 const closeModal = document.querySelector(".close");
@@ -18,6 +19,7 @@ document.addEventListener("DOMContentLoaded", function () {
   initializeNavigation();
   initializeProjects();
   initializeDesigns();
+  initializeCertifications();
   initializeSkills();
   initializeForm();
   initializeScrollEffects();
@@ -165,7 +167,6 @@ function initializeProjects() {
                     <div class="tech-tags">
                         <span>Fusion 360</span>
                         <span>Ender 3 Neo</span>
-                        <!-- <span>Arduino</span> -->
                         <span>ANSYS</span>
                         <span>Thermal Engineering</span>
                     </div>
@@ -176,65 +177,64 @@ function initializeProjects() {
                     <div class="project-images">
                         <img src="assets/filament-maker/view_a.jpeg" alt="Filament Maker 1">
                         <img src="assets/filament-maker/view_b.jpeg" alt="Filament Maker 2">
-                        <img src="assets/filament-maker/view_c.jpeg" alt="Filament Maker 1">
-                        <img src="assets/filament-maker/view_d.jpeg" alt="Filament Maker 2">
+                        <img src="assets/filament-maker/view_c.jpeg" alt="Filament Maker 3">
+                        <img src="assets/filament-maker/view_d.jpeg" alt="Filament Maker 4">
                     </div>
                 </div>
             `,
     },
-    "engine-sim": {
-      title: "4-Cylinder IC Engine Simulation",
+    "radial-engine": {
+      title: "Six-Cylinder Radial Engine – 3D Model & Assembly",
       description: `
                 <div class="project-detail">
                     <h3>Project Overview</h3>
-                    <p>Created a complete 3D model and motion simulation of a 4-cylinder inline engine using CATIA V5, including detailed modeling of crankshaft, pistons, connecting rods, and valve timing mechanisms.</p>
+                    <p>This project involved designing a detailed 3D model of a six-cylinder radial internal combustion engine. The model reflects the actual working principles of radial engines commonly used in aircraft, with accurate component placement and realistic mechanical motion in assembly.</p>
 
                     <h3>Key Features</h3>
                     <ul>
-                        <li>Complete engine assembly with all moving parts</li>
-                        <li>Kinematic simulation of crank-piston motion</li>
-                        <li>Valve timing and camshaft integration</li>
-                        <li>Constraint-based motion verification</li>
+                        <li>Fully assembled radial engine with six cylinders symmetrically placed around the crankcase.</li>
+                        <li>Includes crankshaft, crankcase, pistons, connecting rods, valve housing, and support structures.</li>
+                        <li>Realistic mechanical alignment for simulating radial piston movement.</li>
+                        <li>Color-coded components for better clarity and presentation.</li>
                     </ul>
 
                     <h3>Tools & Technologies</h3>
                     <div class="tech-tags">
-                        <span>CATIA V5</span>
-                        <span>Part Design</span>
-                        <span>Assembly Design</span>
-                        <span>DMU Kinematics</span>
+                        <span>CAD Software: Autodesk Fusion 360</span>
+                        <span>Modules Used: Solid Modeling, Assembly, Joint Simulation</span>
+                        <span>Materials Applied: Custom appearances for visual distinction</span>
+                        <span>File Types: .f3d (Fusion Archive), .step (export)</span>
                     </div>
 
-                    <h3>Technical Achievements</h3>
-                    <p>Successfully modeled complex engine components with precise tolerances and created realistic motion simulation showing the complete engine cycle. The project demonstrates advanced CAD skills and understanding of internal combustion engine mechanics.</p>
+                    <h3>Learning Outcomes</h3>
+                    <p>Developed deep understanding of radial engine mechanics and internal component coordination. Practiced advanced assembly constraints and learned to manage complex hierarchies in large assemblies. Improved parametric modeling skills and component organization in Fusion 360. Gained experience in mechanical visualization and exploded views for presentation purposes.</p>
                 </div>
             `,
     },
     "robotic-arm": {
-      title: "6-DOF Robotic Arm",
+      title: "6-Axis Robotic Arm – Design & Simulation",
       description: `
                 <div class="project-detail">
                     <h3>Project Overview</h3>
-                    <p>Designed a 6-degree-of-freedom robotic arm in CATIA V5, optimized for maximum reach and workspace efficiency. The design includes full movement simulation using DMU Kinematics for precision analysis.</p>
+                    <p>This project involved the complete 3D modeling and kinematic simulation of a 6-axis industrial robotic arm. The aim was to understand the mechanical structure and degrees of freedom typical in robotic manipulators, while simultaneously improving proficiency in CATIA V5's part and assembly environments.</p>
 
                     <h3>Key Features</h3>
                     <ul>
-                        <li>6 degrees of freedom for maximum flexibility</li>
-                        <li>Optimized joint design for smooth operation</li>
-                        <li>Workspace envelope analysis</li>
-                        <li>Collision detection and avoidance</li>
+                        <li>Full 6-degree-of-freedom robotic arm structure with rotating base, shoulder, elbow, wrist, and end-effector.</li>
+                        <li>Designed for ease of movement simulation and modular part replacement.</li>
+                        <li>Proper joint placement and part separation to allow realistic motion.</li>
+                        <li>Assembled using fully constrained parts for simulation compatibility.</li>
                     </ul>
 
                     <h3>Tools & Technologies</h3>
                     <div class="tech-tags">
-                        <span>CATIA V5</span>
-                        <span>DMU Kinematics</span>
-                        <span>Robotics</span>
-                        <span>Motion Analysis</span>
+                        <span>CAD Software: CATIA V5</span>
+                        <span>Modules Used: Part Design, Assembly Design, DMU Kinematics</span>
+                        <span>File Formats: .CATPart, .CATProduct</span>
                     </div>
 
                     <h3>Learning Outcomes</h3>
-                    <p>Gained deep understanding of robotic kinematics, degrees of freedom in manipulator systems, and the challenges of designing precision robotic mechanisms. Enhanced skills in constraint-based design and motion simulation.</p>
+                    <p>Developed hands-on experience in modeling articulated systems in CATIA. Gained a solid understanding of mechanical joints, links, and actuator design in robotic arms. Learned to simulate complex motion using DMU Kinematics and define constraints for real-world behavior. Improved design intent through parametric modeling and better assembly structuring.</p>
                 </div>
             `,
     },
@@ -256,7 +256,6 @@ function initializeProjects() {
                     <h3>Tools & Technologies</h3>
                     <div class="tech-tags">
                         <span>Fusion 360</span>
-                        <!-- <span>Arduino UNO</span> -->
                         <span>GRBL Firmware</span>
                         <span>3D Printing</span>
                         <span>Stepper Motors</span>
@@ -295,151 +294,133 @@ function initializeProjects() {
                 </div>
             `,
     },
-    "csir-nal": {
-      title: "CSIR-NAL Internship - Trouser Duct Design",
-      description: `
-                <div class="project-detail">
-                    <h3>Project Overview</h3>
-                    <p>Interned at CSIR-NAL's Advanced Composites Division, contributing to the design of a carbon-fiber trouser duct used in aerospace ventilation systems. This internship provided hands-on experience with aerospace-grade engineering.</p>
-
-                    <h3>Key Responsibilities</h3>
-                    <ul>
-                        <li>Modeled duct sections with composite layering</li>
-                        <li>Studied airflow and geometric constraints</li>
-                        <li>Worked under R&D environment mentorship</li>
-                        <li>Created aerospace-grade documentation</li>
-                    </ul>
-
-                    <h3>Tools & Technologies</h3>
-                    <div class="tech-tags">
-                        <span>CATIA Composites Workbench</span>
-                        <span>CFRP Tools</span>
-                        <span>Aerospace Design</span>
-                        <span>CFD Analysis</span>
-                    </div>
-
-                    <h3>Professional Experience</h3>
-                    <p>Gained valuable industry experience in aerospace engineering, learned about composite material design principles, and understood the rigor required for aerospace-grade component development. Enhanced skills in professional documentation and R&D workflows.</p>
-                </div>
-            `,
-    },
   };
 
   // Design data for 3D printed designs
   const designData = {
-    "radial-engine": {
-      title: "Six Cylinder Radial Engine",
+    hydroshell: {
+      title: "Hydroshell – Organic-Style Decorative Structure",
       description: `
         <div class="project-detail">
-            <h3>Design Overview</h3>
-            <p>A complex mechanical assembly showcasing precision engineering and detailed component design. This radial engine model demonstrates advanced CAD modeling skills and understanding of mechanical systems.</p>
+            <h3>Project Overview</h3>
+            <p>Hydroshell is a 3D model inspired by organic, branching geometries, designed primarily as a decorative piece for aquarium environments. The aim was to explore natural-looking lattice forms using parametric tools in Fusion 360, while maintaining symmetry, balance, and 3D printability.</p>
 
             <h3>Key Features</h3>
             <ul>
-                <li>Six-cylinder radial configuration</li>
-                <li>Detailed piston and connecting rod assembly</li>
-                <li>Precision crankshaft design</li>
-                <li>Complete valve train system</li>
+                <li>Organic, interconnected lattice-style design with freeform structure.</li>
+                <li>Hollow inner volume optimized for water circulation and aquatic use.</li>
+                <li>Aesthetic appeal suitable for aquarium decoration or artistic prototypes.</li>
+                <li>Designed as a single body for support-free 3D printing.</li>
             </ul>
 
-            <h3>Technical Details</h3>
+            <h3>Tools & Technologies</h3>
             <div class="tech-tags">
-                <span>CATIA V5</span>
-                <span>Assembly Design</span>
-                <span>Mechanical Engineering</span>
-                <span>Precision Modeling</span>
+                <span>CAD Software: Autodesk Fusion 360</span>
+                <span>Techniques Used: Sculpting, Form Tools, Mesh Conversion</span>
+                <span>Output Formats: .f3d (Fusion file), .stl (3D printing)</span>
             </div>
 
-            <h3>Print Specifications</h3>
-            <p>Designed for FDM printing with optimized support structures and assembly considerations. Each component is carefully designed to fit together seamlessly after printing.</p>
-        </div>
-      `,
-    },
-    "robotic-arm": {
-      title: "Six Axis Robotic Arm",
-      description: `
-        <div class="project-detail">
-            <h3>Design Overview</h3>
-            <p>An articulated robotic arm with full range of motion and precision joint design. This design demonstrates advanced kinematics understanding and practical robotics applications.</p>
-
-            <h3>Key Features</h3>
-            <ul>
-                <li>Six degrees of freedom</li>
-                <li>Precision joint mechanisms</li>
-                <li>Optimized workspace design</li>
-                <li>Modular component system</li>
-            </ul>
-
-            <h3>Technical Details</h3>
-            <div class="tech-tags">
-                <span>Robotics</span>
-                <span>Kinematics</span>
-                <span>Precision Design</span>
-                <span>Modular Assembly</span>
-            </div>
-
-            <h3>Applications</h3>
-            <p>Suitable for educational purposes, prototyping, and small-scale automation projects. The design can be adapted for various end-effector applications.</p>
-        </div>
-      `,
-    },
-    "hydroshell": {
-      title: "Hydroshell",
-      description: `
-        <div class="project-detail">
-            <h3>Design Overview</h3>
-            <p>A fluid dynamics optimized shell design with complex geometric patterns. This design combines aesthetic appeal with functional considerations for fluid flow applications.</p>
-
-            <h3>Key Features</h3>
-            <ul>
-                <li>Fluid dynamics optimization</li>
-                <li>Complex geometric patterns</li>
-                <li>Structural integrity</li>
-                <li>Aesthetic design elements</li>
-            </ul>
-
-            <h3>Technical Details</h3>
-            <div class="tech-tags">
-                <span>Fluid Dynamics</span>
-                <span>Geometric Design</span>
-                <span>Optimization</span>
-                <span>Structural Analysis</span>
-            </div>
-
-            <h3>Applications</h3>
-            <p>Can be used in fluid handling systems, decorative elements, or as a base for further engineering applications requiring optimized flow characteristics.</p>
+            <h3>Learning Outcomes</h3>
+            <p>Gained experience working with sculpted and non-traditional geometries. Learned to create complex organic shapes using form and surface tools. Practiced mesh conversion and clean export preparation for additive manufacturing. Enhanced design thinking for aesthetic + functional integration in 3D environments.</p>
         </div>
       `,
     },
     "aquadome-skeleton": {
-      title: "Aquadome Skeleton",
+      title: "Skeleton Sphere – Aquarium Decor Model",
       description: `
         <div class="project-detail">
-            <h3>Design Overview</h3>
-            <p>A structural framework design with organic architectural elements. This design showcases the fusion of structural engineering principles with artistic architectural concepts.</p>
+            <h3>Project Overview</h3>
+            <p>Designed as a decorative element for aquariums, this hollow lattice sphere offers a natural hiding spot for small fish while enhancing visual appeal.</p>
 
             <h3>Key Features</h3>
             <ul>
-                <li>Organic architectural elements</li>
-                <li>Structural framework design</li>
-                <li>Modular construction approach</li>
-                <li>Scalable design system</li>
+                <li>Open lattice structure for water flow</li>
+                <li>Fish-safe, smooth geometry</li>
+                <li>Lightweight and support-free design</li>
+                <li>Aesthetic blend of form and function</li>
+            </ul>
+
+            <h3>Tools & Technologies</h3>
+            <div class="tech-tags">
+                <span>Software: Autodesk Fusion 360</span>
+                <span>Techniques: Form modeling, pattern generation</span>
+            </div>
+
+            <h3>Learning Outcomes</h3>
+            <p>Explored organic design techniques. Improved print-friendly modeling. Applied CAD for creative functional design.</p>
+
+            <div class="project-images">
+                <img src="assets/designs/aquadome_skeleton/aquadome_skeleton_a.jpg" alt="Aquadome Skeleton View A">
+                <img src="assets/designs/aquadome_skeleton/aquadome_skeleton_b.jpg" alt="Aquadome Skeleton View B">
+            </div>
+        </div>
+      `,
+    },
+    "aquadome-skeleton-b": {
+      title: "Fishtank Skeleton Dome – Aquatic Shelter Design",
+      description: `
+        <div class="project-detail">
+            <h3>Project Overview</h3>
+            <p>A dome-shaped structure designed for aquarium use, offering both aesthetic value and functional shelter for fish. The open geometry allows natural water flow and light penetration.</p>
+
+            <h3>Key Features</h3>
+            <ul>
+                <li>Smooth, fish-safe rounded edges</li>
+                <li>Openings for swimming and hiding</li>
+                <li>Lightweight and easy to 3D print</li>
+                <li>Organic pattern inspired by turtle shells</li>
+            </ul>
+
+            <h3>Tools & Technologies</h3>
+            <div class="tech-tags">
+                <span>Software: Autodesk Fusion 360</span>
+                <span>Techniques: Surface cutting, dome modeling, edge refinement</span>
+            </div>
+
+            <h3>Learning Outcomes</h3>
+            <p>Practiced curved surface design. Improved mesh-ready modeling. Applied design for aquatic environments.</p>
+        </div>
+      `,
+    },
+    lithophane: {
+      title: "Lithophane",
+      description: `
+        <div class="project-detail">
+            <h3>Design Overview</h3>
+            <p>3D printed light art using image to lithophane maker website, revealing images when backlit with precision thickness variations. This technique creates stunning visual effects by controlling light transmission through varying material thickness.</p>
+
+            <h3>Key Features</h3>
+            <ul>
+                <li>Precision thickness control</li>
+                <li>Light transmission optimization</li>
+                <li>Image conversion algorithm</li>
+                <li>Backlit display capability</li>
             </ul>
 
             <h3>Technical Details</h3>
             <div class="tech-tags">
-                <span>Architecture</span>
-                <span>Structural Design</span>
-                <span>Organic Geometry</span>
-                <span>Modular System</span>
+                <span>Light Art</span>
+                <span>Precision Printing</span>
+                <span>Photography</span>
+                <span>Light Transmission</span>
             </div>
 
-            <h3>Applications</h3>
-            <p>Suitable for architectural models, educational displays, or as a base for larger-scale construction projects. The modular design allows for easy scaling and modification.</p>
+            <h3>Process</h3>
+            <p>Created using image to lithophane maker website by converting images to height maps where darker areas become thicker material, controlling light transmission. When backlit, the varying thickness creates the original image through light and shadow.</p>
+
+            <div class="project-images">
+                <video controls>
+                    <source src="assets/designs/lithophane/litho.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+                <img src="assets/designs/lithophane/litho_a.jpg" alt="Lithophane View A">
+                <img src="assets/designs/lithophane/litho_b.jpg" alt="Lithophane View B">
+                <img src="assets/designs/lithophane/litho_c.jpg" alt="Lithophane View C">
+            </div>
         </div>
       `,
     },
-    "bench": {
+    bench: {
       title: "Bench Design",
       description: `
         <div class="project-detail">
@@ -464,6 +445,82 @@ function initializeProjects() {
 
             <h3>Applications</h3>
             <p>Perfect for outdoor spaces, public areas, or as a prototype for larger furniture manufacturing. The design can be scaled for different applications and environments.</p>
+        </div>
+      `,
+    },
+    benchwise: {
+      title: "Benchwice – 2D to 3D Modeling & Assembly",
+      description: `
+        <div class="project-detail">
+            <h3>Project Overview</h3>
+            <p>Benchwice is a fully modeled and assembled bench vice created in CATIA V5, based entirely on a 2D engineering drawing. The project involved modeling all individual components and assembling them with proper constraints.</p>
+
+            <h3>Key Features</h3>
+            <ul>
+                <li>Complete 3D model from 2D technical sketch</li>
+                <li>Fully constrained assembly using CATIA's Assembly module</li>
+                <li>Functional elements: screw rod, movable jaw, locknut, and grip surfaces</li>
+            </ul>
+
+            <h3>Tools & Technologies</h3>
+            <div class="tech-tags">
+                <span>Software: CATIA V5</span>
+                <span>Modules Used: Part Design, Assembly Design</span>
+                <span>Components: 15+ modeled parts, including screws, jaws, washers, and fasteners</span>
+            </div>
+
+            <h3>Learning Outcomes</h3>
+            <p>Practiced interpreting 2D views into 3D components. Gained hands-on experience in constraint-based mechanical assembly. Improved attention to part interaction and fit in mechanical designs.</p>
+        </div>
+      `,
+    },
+    "bush-bearing": {
+      title: "Bushed Bearing – 3D Modeling & Assembly",
+      description: `
+        <div class="project-detail">
+            <h3>Project Overview</h3>
+            <p>This is a simple bush-bearing assembly designed in CATIA V5 from scratch. The model includes the shaft, bush, and mounting block, assembled using proper constraints to simulate functional placement.</p>
+
+            <h3>Key Features</h3>
+            <ul>
+                <li>Three-part assembly: shaft, bush, and base block</li>
+                <li>Concentric and surface contact constraints</li>
+                <li>Realistic representation of bearing support design</li>
+            </ul>
+
+            <h3>Tools & Technologies</h3>
+            <div class="tech-tags">
+                <span>Software: CATIA V5</span>
+                <span>Modules Used: Part Design, Assembly Design</span>
+            </div>
+
+            <h3>Learning Outcomes</h3>
+            <p>Practiced basic mechanical part modeling. Applied precise constraint definitions for fitting assemblies. Strengthened understanding of part alignment and tolerancing.</p>
+        </div>
+      `,
+    },
+    "universal-coupling": {
+      title: "Universal Coupling – Mechanical Joint Design",
+      description: `
+        <div class="project-detail">
+            <h3>Project Overview</h3>
+            <p>This universal coupling was modeled and assembled in CATIA V5 to understand the working of rotary motion transmission between non-collinear shafts. It was created from a 2D drawing and includes all core components like forks, pins, and shaft connectors.</p>
+
+            <h3>Key Features</h3>
+            <ul>
+                <li>Fully functional mechanical joint</li>
+                <li>Modeled from standard 2D views</li>
+                <li>Rotation-capable design with realistic constraints</li>
+            </ul>
+
+            <h3>Tools & Technologies</h3>
+            <div class="tech-tags">
+                <span>Software: CATIA V5</span>
+                <span>Modules Used: Part Design, Assembly Design</span>
+            </div>
+
+            <h3>Learning Outcomes</h3>
+            <p>Learned mechanical joint assembly and movement constraints. Practiced designing parts with rotational symmetry. Enhanced understanding of mechanical motion transfer systems.</p>
         </div>
       `,
     },
@@ -520,6 +577,11 @@ function initializeProjects() {
 
             <h3>Applications</h3>
             <p>Suitable for decorative purposes, functional use, or as a study in geometric design principles. The faceted design creates interesting light reflections and visual effects.</p>
+
+            <div class="project-images">
+                <img src="assets/designs/polygon_design_cup/polygon_design_cup_a.jpg" alt="Polygon Cup View A">
+                <img src="assets/designs/polygon_design_cup/polygon_design_cup_b.jpg" alt="Polygon Cup View B">
+            </div>
         </div>
       `,
     },
@@ -548,6 +610,45 @@ function initializeProjects() {
 
             <h3>Applications</h3>
             <p>Perfect for artistic display, functional use, or as a conversation piece. The organic design makes it a unique addition to any collection.</p>
+
+            <div class="project-images">
+                <img src="assets/designs/wave_cup/wave_cup_3d_printed.jpg" alt="Wave Cup 3D Printed">
+                <img src="assets/designs/wave_cup/wave_cup_3d_printed_a.jpg" alt="Wave Cup 3D Printed View A">
+                <img src="assets/designs/wave_cup/wave_cup_3d_printed_b.jpg" alt="Wave Cup 3D Printed View B">
+            </div>
+        </div>
+      `,
+    },
+    "cube-post-processed": {
+      title: "Cube Post Processed",
+      description: `
+        <div class="project-detail">
+            <h3>Design Overview</h3>
+            <p>A 3D printed cube with advanced post-processing techniques and surface finishing. This project demonstrates the importance of post-processing in achieving professional-quality 3D prints.</p>
+
+            <h3>Key Features</h3>
+            <ul>
+                <li>Advanced post-processing techniques</li>
+                <li>Surface finishing methods</li>
+                <li>Quality enhancement</li>
+                <li>Professional finish</li>
+            </ul>
+
+            <h3>Technical Details</h3>
+            <div class="tech-tags">
+                <span>Post-Processing</span>
+                <span>Surface Finish</span>
+                <span>Quality Enhancement</span>
+                <span>Professional Finish</span>
+            </div>
+
+            <h3>Process</h3>
+            <p>Demonstrates various post-processing techniques including sanding, priming, painting, and surface treatment to achieve a professional-quality finish on 3D printed parts.</p>
+
+            <div class="project-images">
+                <img src="assets/designs/cube_post_processed/cube_post_processed_a.jpg" alt="Cube Post Processed View A">
+                <img src="assets/designs/cube_post_processed/cube_post_processed_b.jpg" alt="Cube Post Processed View B">
+            </div>
         </div>
       `,
     },
@@ -576,6 +677,46 @@ function initializeProjects() {
 
             <h3>Applications</h3>
             <p>Ideal for home use, small-scale food preparation, or as a prototype for larger appliance development. The design can be adapted for various mixing applications.</p>
+
+            <div class="project-images">
+                <img src="assets/designs/juice mixer/assembled_view.png" alt="Juice Mixer Assembled">
+                <img src="assets/designs/juice mixer/cover.png" alt="Juice Mixer Cover">
+                <img src="assets/designs/juice mixer/motor_holder_cover.png" alt="Motor Holder Cover">
+            </div>
+        </div>
+      `,
+    },
+    "radial-engine-3d-printed": {
+      title: "Radial Engine 3D Printed",
+      description: `
+        <div class="project-detail">
+            <h3>Project Overview</h3>
+            <p>3D printed six-cylinder radial engine with working mechanical motion and assembly. This project demonstrates the capabilities of 3D printing for complex mechanical assemblies.</p>
+
+            <h3>Key Features</h3>
+            <ul>
+                <li>Fully functional 3D printed radial engine</li>
+                <li>Working mechanical motion and assembly</li>
+                <li>Precision 3D printing techniques</li>
+                <li>Complex multi-part assembly</li>
+            </ul>
+
+            <h3>Tools & Technologies</h3>
+            <div class="tech-tags">
+                <span>3D Printing</span>
+                <span>Mechanical Assembly</span>
+                <span>Precision Design</span>
+            </div>
+
+            <h3>Learning Outcomes</h3>
+            <p>Demonstrated advanced 3D printing capabilities for complex mechanical assemblies. Learned precision design for 3D printed moving parts. Gained experience in multi-part assembly design.</p>
+
+            <div class="project-images">
+                <video controls>
+                    <source src="assets/designs/radial_engine_3d_printed.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+            </div>
         </div>
       `,
     },
@@ -671,6 +812,13 @@ function initializeDesigns() {
   });
 }
 
+function initializeCertifications() {
+  // Add animation delay for certification cards
+  certCards.forEach((card, index) => {
+    card.style.animationDelay = `${index * 0.1}s`;
+  });
+}
+
 // Contact form functionality
 function initializeForm() {
   contactForm.addEventListener("submit", function (e) {
@@ -762,50 +910,6 @@ projectCards.forEach((card, index) => {
   card.style.animationDelay = `${index * 0.1}s`;
 });
 
-// Dynamic typing effect for hero subtitle (optional enhancement)
-function typeWriter(element, text, speed = 100) {
-  let i = 0;
-  element.innerHTML = "";
-
-  function type() {
-    if (i < text.length) {
-      element.innerHTML += text.charAt(i);
-      i++;
-      setTimeout(type, speed);
-    }
-  }
-
-  type();
-}
-
-// Easter egg: Konami code
-let konamiCode = [];
-const konamiSequence = [
-  "ArrowUp",
-  "ArrowUp",
-  "ArrowDown",
-  "ArrowDown",
-  "ArrowLeft",
-  "ArrowRight",
-  "ArrowLeft",
-  "ArrowRight",
-  "KeyB",
-  "KeyA",
-];
-
-document.addEventListener("keydown", function (e) {
-  konamiCode.push(e.code);
-
-  if (konamiCode.length > konamiSequence.length) {
-    konamiCode.shift();
-  }
-
-  if (JSON.stringify(konamiCode) === JSON.stringify(konamiSequence)) {
-    showToast("🎉 Easter egg found! You discovered the secret code!");
-    konamiCode = [];
-  }
-});
-
 // Performance optimization: Lazy loading for images
 function initializeLazyLoading() {
   const images = document.querySelectorAll('img[loading="lazy"]');
@@ -830,43 +934,6 @@ function initializeLazyLoading() {
 
 // Initialize lazy loading
 initializeLazyLoading();
-
-// Utility function for smooth scrolling
-function smoothScrollTo(element, duration = 1000) {
-  const targetPosition = element.offsetTop - 70;
-  const startPosition = window.pageYOffset;
-  const distance = targetPosition - startPosition;
-  let startTime = null;
-
-  function animation(currentTime) {
-    if (startTime === null) startTime = currentTime;
-    const timeElapsed = currentTime - startTime;
-    const run = ease(timeElapsed, startPosition, distance, duration);
-    window.scrollTo(0, run);
-    if (timeElapsed < duration) requestAnimationFrame(animation);
-  }
-
-  function ease(t, b, c, d) {
-    t /= d / 2;
-    if (t < 1) return (c / 2) * t * t + b;
-    t--;
-    return (-c / 2) * (t * (t - 2) - 1) + b;
-  }
-
-  requestAnimationFrame(animation);
-}
-
-// Add loading animation to buttons
-document.querySelectorAll(".btn").forEach((btn) => {
-  btn.addEventListener("click", function () {
-    if (!this.classList.contains("loading")) {
-      this.style.transform = "scale(0.95)";
-      setTimeout(() => {
-        this.style.transform = "";
-      }, 150);
-    }
-  });
-});
 
 // Console message for developers
 console.log(`
@@ -917,6 +984,5 @@ document.addEventListener("touchend", function (e) {
 // Export functions for potential module use
 window.portfolioUtils = {
   showToast,
-  smoothScrollTo,
   closeProjectModal,
-};
+}; 
