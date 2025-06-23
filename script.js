@@ -97,8 +97,8 @@ navLinks.forEach((link) => {
 // Scroll animations
 function initializeAnimations() {
   const observerOptions = {
-    threshold: 0.1,
-    rootMargin: "0px 0px -50px 0px",
+    threshold: 0.15,
+    rootMargin: "0px 0px -20px 0px",
   };
 
   const observer = new IntersectionObserver(function (entries) {
@@ -114,9 +114,8 @@ function initializeAnimations() {
     ".section-title, .about-content, .skill-category, .project-card, .design-card, .cert-card, .contact-content"
   );
 
-  animatedElements.forEach((element, index) => {
+  animatedElements.forEach((element) => {
     element.classList.add("fade-in");
-    element.style.transitionDelay = `${index * 0.1}s`;
     observer.observe(element);
   });
 }
@@ -133,11 +132,11 @@ function initializeSkills() {
           const width = progressBar.getAttribute("data-width");
           setTimeout(() => {
             progressBar.style.width = width + "%";
-          }, 200);
+          }, 100);
         }
       });
     },
-    { threshold: 0.5 }
+    { threshold: 0.3, rootMargin: "0px 0px -30px 0px" }
   );
 
   skillBars.forEach((bar) => {
@@ -810,17 +809,11 @@ function closeProjectModal() {
 
 // Design cards functionality
 function initializeDesigns() {
-  // Add animation delay for design cards
-  designCards.forEach((card, index) => {
-    card.style.animationDelay = `${index * 0.1}s`;
-  });
+  // No animation delays for immediate response
 }
 
 function initializeCertifications() {
-  // Add animation delay for certification cards
-  certCards.forEach((card, index) => {
-    card.style.animationDelay = `${index * 0.1}s`;
-  });
+  // No animation delays for immediate response
 }
 
 // Contact form functionality
@@ -874,8 +867,10 @@ if (downloadResumeBtn) {
 
 // Scroll effects
 function initializeScrollEffects() {
-  // Parallax effect for hero section
-  window.addEventListener("scroll", function () {
+  // Parallax effect for hero section with requestAnimationFrame for better performance
+  let ticking = false;
+  
+  function updateParallax() {
     const scrolled = window.pageYOffset;
     const parallaxElements = document.querySelectorAll(".floating-elements");
 
@@ -883,9 +878,18 @@ function initializeScrollEffects() {
       const speed = 0.5;
       element.style.transform = `translateY(${scrolled * speed}px)`;
     });
+    
+    ticking = false;
+  }
+
+  window.addEventListener("scroll", function () {
+    if (!ticking) {
+      requestAnimationFrame(updateParallax);
+      ticking = true;
+    }
   });
 
-  // Smooth reveal animations
+  // Smooth reveal animations with optimized observer
   const revealElements = document.querySelectorAll(
     ".fade-in, .slide-in-left, .slide-in-right"
   );
@@ -894,13 +898,16 @@ function initializeScrollEffects() {
     function (entries) {
       entries.forEach((entry) => {
         if (entry.isIntersecting) {
-          entry.target.classList.add("visible");
+          // Use requestAnimationFrame for smoother animation triggering
+          requestAnimationFrame(() => {
+            entry.target.classList.add("visible");
+          });
         }
       });
     },
     {
-      threshold: 0.1,
-      rootMargin: "0px 0px -50px 0px",
+      threshold: 0.15,
+      rootMargin: "0px 0px -20px 0px",
     }
   );
 
@@ -909,10 +916,10 @@ function initializeScrollEffects() {
   });
 }
 
-// Floating animation for project cards
-projectCards.forEach((card, index) => {
-  card.style.animationDelay = `${index * 0.1}s`;
-});
+// Floating animation for project cards - no delays for immediate response
+// projectCards.forEach((card, index) => {
+//   card.style.animationDelay = `${index * 0.1}s`;
+// });
 
 // Performance optimization: Lazy loading for images
 function initializeLazyLoading() {

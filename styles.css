@@ -29,8 +29,8 @@
     --container-padding: 0 20px;
 
     /* Transitions */
-    --transition-smooth: all 0.15s cubic-bezier(0.4, 0, 0.2, 0.5);
-    --transition-bounce: all 0.1s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    --transition-smooth: all 0.12s cubic-bezier(0.4, 0, 0.2, 0.5);
+    --transition-bounce: all 0.08s cubic-bezier(0.68, -0.55, 0.265, 0.5);
 }
 
 html {
@@ -164,7 +164,7 @@ body {
         linear-gradient(rgba(0, 255, 255, 0.1) 1px, transparent 1px),
         linear-gradient(90deg, rgba(0, 255, 255, 0.1) 1px, transparent 1px);
     background-size: 50px 50px;
-    animation: gridMove 12s linear infinite;
+    animation: gridMove 5s linear infinite;
 }
 
 @keyframes gridMove {
@@ -518,7 +518,7 @@ section {
     background: linear-gradient(45deg, var(--primary-color), var(--secondary-color));
     border-radius: 4px;
     width: 0;
-    transition: width 0.8s ease-in-out;
+    transition: width 0.6s ease-in-out;
 }
 
 /* Projects Section */
@@ -1203,8 +1203,9 @@ section {
 /* Animation Classes */
 .fade-in {
     opacity: 0;
-    transform: translateY(30px);
-    transition: var(--transition-smooth);
+    transform: translateY(20px);
+    transition: all 0.1s cubic-bezier(0.4, 0, 0.2, 0.5);
+    will-change: opacity, transform;
 }
 
 .fade-in.visible {
@@ -1214,8 +1215,9 @@ section {
 
 .slide-in-left {
     opacity: 0;
-    transform: translateX(-50px);
-    transition: var(--transition-smooth);
+    transform: translateX(-30px);
+    transition: all 0.1s cubic-bezier(0.4, 0, 0.2, 0.5);
+    will-change: opacity, transform;
 }
 
 .slide-in-left.visible {
@@ -1225,8 +1227,9 @@ section {
 
 .slide-in-right {
     opacity: 0;
-    transform: translateX(50px);
-    transition: var(--transition-smooth);
+    transform: translateX(30px);
+    transition: all 0.1s cubic-bezier(0.4, 0, 0.2, 0.5);
+    will-change: opacity, transform;
 }
 
 .slide-in-right.visible {
